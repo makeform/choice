@@ -1,0 +1,11 @@
+div
+  .form-group(plug="widget",ld="base")
+    div(ld="display",data-display="block")
+      label(ld="label")
+      span.text-danger.ml-2(ld="is-required") *
+    .text-sm.text-muted(ld="display", data-display="block"): div(ld="desc", style="margin:-.6em 0 .7em")
+    select.m-edit.form-control(ld="input")
+      option(value="") ...
+      option(ld-each="option") ...
+    .m-view: div(ld="content")
+  script(type="@plotdb/block"): include:lsc index.ls
