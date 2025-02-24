@@ -15,7 +15,7 @@ mod = ({root, ctx, data, parent, t, i18n}) ->
         input: input: handler
         change: input: handler
       handler:
-        content: ({node}) ~> if @is-empty! => 'n/a' else node.innerText = t(@content!)
+        content: ({node}) ~> if @is-empty! or typeof(v = @content!) != \string => \n/a else t(v)
         option:
           list: ~> @mod.info.config.values or []
           key: -> it
