@@ -1,5 +1,13 @@
 div
-  .form-group.has-tips.manual(ld="base error-root",plug="widget")
+  div(plug="body")
+    .m-edit.has-tips.manual(ld="error-root")
+      select.form-control(ld="input")
+        option(value="") ...
+        option(ld-each="option") ...
+      .m-edit: .hover-tip.tip-sm: div(ld-each="error")
+    .m-view: div(ld="content")
+
+  //-.form-group.has-tips.manual(ld="base error-root",plug="widget")
     div(ld="display", data-display="block"): label.d-flex.align-items-end.flex-wrap
       div
         span(ld="label")

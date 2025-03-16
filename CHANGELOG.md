@@ -1,5 +1,11 @@
 # Change Logs
 
+## v2.0.0 (upcoming)
+
+ - support object values
+ - tweak DOM based on updated `@makeform/common` DOM structure.
+
+
 ## v1.0.3
 
  - ensure translated value to be string, otherwise `n/a` will be shown.
