@@ -4,6 +4,11 @@
 
  - support object values
  - tweak DOM based on updated `@makeform/common` DOM structure.
+ - support multiple choice
+ - support `other` and toggling other text field
+ - support inline / block display with different multiple / other configuration
+ - support ldcover-based editing mechanism
+ - support configuration overridding from subblock via `init.choice` pubsub event.
 
 
 ## v1.0.3
