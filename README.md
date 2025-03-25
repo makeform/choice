@@ -6,6 +6,14 @@ Dropdown style widget for users to make one single choice between multiple optio
 ## Configs
 
  - `values`: Array of string for options in this widget.
+ - `multiple`: default false. when set to true, allow multiple choices
+ - `other`: an object with following fields, for configuration of custom data:
+   - `enabled`: show a dedicated `other` option.
+   - `editable`: show a text field when `other` is chosen
+   - `requireOnCheck`: default false. when set to true, text field for `other` must not empty if `other` is chosen.
+ - `sep`: default `,`. text separator for joining values from multiple choice in view mode.
+ - `layout`: either `row` or `column`. default `column`. decide how to layout text field for `other` and select widget.
+ 
 
 
 ## Extension

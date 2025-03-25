@@ -9,7 +9,7 @@
  - support inline / block display with different multiple / other configuration
  - support ldcover-based editing mechanism
  - support configuration overridding from subblock via `init.choice` pubsub event.
-
+ - support custom separator in view mode
 
 ## v1.0.3
 
