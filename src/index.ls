@@ -134,7 +134,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
           .filter (v) -> v != \__other__
           .map (v) -> tolabel(v)
         if other-text => ret.push other-text
-        ret = ret.join((if lc.cfg.sep => that else ',') + ' ')
+        ret = ret.join(if lc.cfg.sep => that else ', ')
         if !ret => ret = t("empty")
         return ret
       handler:
