@@ -1,6 +1,6 @@
 # Change Logs
 
-## v2.0.0 (upcoming)
+## v2.0.0
 
  - support object values
  - tweak DOM based on updated `@makeform/common` DOM structure.
@@ -10,6 +10,7 @@
  - support ldcover-based editing mechanism
  - support configuration overridding from subblock via `init.choice` pubsub event.
  - support custom separator in view mode
+
 
 ## v1.0.3
 
