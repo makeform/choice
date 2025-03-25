@@ -57,7 +57,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
       _render-option!
 
     handler = ({select, value, other}) ~>
-      if !(lc.cfg.multiple and lc.other.enabled) =>
+      if !(lc.cfg.multiple or lc.other.enabled) =>
         if select => return @value (lc.value = select.value)
         else if value => return @value(lc.value = value or '')
       if !lc.value? => lc.value = {list: []}
