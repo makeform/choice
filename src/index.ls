@@ -34,7 +34,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
     tolabel = (s) ->
       r = (lc.values ++ getother!).filter(-> getv(it) == s).0
       r = if r and r.label => r.label else r
-      return if r => t(r) else s
+      return if r => t(r) else if typeof(s) == \string => t(s) else s
     inside = (v) ~> v in (lc.values or []).map(-> getv it) ++ getother!
     _render-option = debounce 100, ~> if @mod.child.option-view => @mod.child.option-view.render!
     remeta = ~>
