@@ -1,5 +1,11 @@
 # Change Logs
 
+## v2.1.0
+
+ - support `chosen` selector for list of selected items
+ - tweak content selector for single / multiple choices
+
+
 ## v2.0.1
 
  - fix bug: content in view mode isn't translated

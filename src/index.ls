@@ -81,6 +81,15 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
     @mod.child.option-view = new ldview do
       root: root
       handler:
+        chosen:
+          list: ~>
+            if typeof(v = @value!) == \string => [v]
+            else if v => v.list or []
+            else []
+          key: -> getv(it)
+          view:
+            action: click: "@": ({node, ctx}) ~> handler {value: getv(ctx)}
+            text: label: ({node, ctx}) ~> getlabel(ctx)
         option:
           list: ~>
             ret = lc.values
@@ -121,7 +130,6 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
       init: ldcv: ({node}) ~> @mod.child.ldcv[node.dataset.name] = new ldcover root: node, resident: true
       text: content: ({node}) ~>
         if @is-empty! => return t(\empty)
-        if !(lc.cfg.multiple or lc.other.enabled) => return @content!
         ret = @value!
         other = (ret or {}).other
         ret = if typeof(ret) == \string => [ret] else (ret.list or [])
@@ -133,7 +141,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
         ret = ret
           .filter (v) -> v != \__other__
           .map (v) -> tolabel(v)
-        if other-text => ret.push other-text
+        if lc.other.enabled and other-text => ret.push other-text
         ret = ret.join(if lc.cfg.sep => that else ', ')
         if !ret => ret = t("empty")
         return ret
