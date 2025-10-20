@@ -1,5 +1,11 @@
 # Change Logs
 
+## v3.0.0
+
+ - change default value of `other.editable` to `true`.
+   in similar widgets, enable `other` always brings up a edit field. Use default `true` value maintains the consistency and still keep the flexibility to turn it off.
+
+
 ## v2.1.0
 
  - support `chosen` selector for list of selected items

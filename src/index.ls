@@ -136,7 +136,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
         other-text = ''
         if ('__other__' in ret) and lc.other.enabled =>
           other-text = t("other")
-          if lc.other.editable and (other or {}).text =>
+          if (lc.other.editable or !(lc.other.editable?)) and (other or {}).text =>
             other-text += (":" + other.text)
         ret = ret
           .filter (v) -> v != \__other__
@@ -162,7 +162,7 @@ mod = ({root, ctx, data, pubsub, parent, t, i18n}) ->
           if !lc.meta.readonly => node.removeAttribute \readonly
           else node.setAttribute \readonly, null
           vals = normv!
-          show-other = lc.other.enabled and lc.other.editable and ("__other__" in vals)
+          show-other = lc.other.enabled and (lc.other.editable or !lc.other.editable?) and ("__other__" in vals)
           node.classList.toggle \d-none, !show-other
           node.value = ((lc.value or {}).other or {}).text or ''
         "input-group": ({node}) ~>
