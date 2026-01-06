@@ -10,6 +10,6 @@
     "@plotdb/srcbuild": "^0.0.69"
   },
   "devDependencies": {
-    "fedep": "^1.4.6"
+    "fedep": "^1.6.0"
   }
 }
