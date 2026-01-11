@@ -1,5 +1,12 @@
 # Change Logs
 
+## v4.0.0
+
+ - support @grantdash/composer host
+ - ensure error information is shown correctly in corresponding field, either select or input box.
+ - show error about fill other only if other is chosen
+
+
 ## v3.0.0
 
  - change default value of `other.editable` to `true`.
