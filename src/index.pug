@@ -5,9 +5,9 @@ div
     .m-edit.has-tips.manual(ld="error-root")
       .rounded.border.mb-2.py-1.px-2.cps-ctrl: .d-flex.flex-wrap.g-2.align-items-center
         .btn.btn-light.btn-sm(t="edit options")
-        div(ld-each="editable-option"): span
+        .cps-hover-host(ld-each="editable-option"): span
           span(ld="text")
-          i.i-close.text-sm.ml-1.cps-hover.cps-remove(ld="remove")
+          i.i-close.text-sm.ml-1.cps-hover-reveal.cps-remove(ld="remove")
         .clickable.rounded-sm.bg-dark.cps-add(ld="add-option") ＋
       div(ld="input-group")
         select.form-control(ld="input")
